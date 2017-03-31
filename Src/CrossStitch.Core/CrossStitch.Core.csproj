@@ -179,6 +179,7 @@
     <Compile Include="Utility\NullModuleLog.cs" />
     <Compile Include="Utility\Serialization\ISerializer.cs" />
     <Compile Include="Utility\Serialization\JsonSerializer.cs" />
+    <Compile Include="Zones.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Modules\Alerts\README.md" />

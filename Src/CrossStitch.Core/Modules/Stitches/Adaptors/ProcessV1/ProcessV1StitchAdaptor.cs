@@ -70,6 +70,7 @@ namespace CrossStitch.Core.Modules.Stitches.Adaptors.ProcessV1
             _process.Exited += ProcessOnExited;
 
             bool ok = _process.Start();
+            // TODO: if (!ok) report the issue
 
             var fromStitchReader = new FromStitchMessageReader(_process.StandardOutput);
             var toStitchSender = new ToStitchMessageSender(_process.StandardInput);
