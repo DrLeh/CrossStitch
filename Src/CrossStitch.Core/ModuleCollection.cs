@@ -8,6 +8,7 @@ using CrossStitch.Core.Modules.Timer;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using CrossStitch.Core.Modules.Security;
 using CrossStitch.Core.Utility.Extensions;
 
 namespace CrossStitch.Core
@@ -67,6 +68,8 @@ namespace CrossStitch.Core
             // straight-forward, so we need to raise a warning.
             if (!_modules.ContainsKey(ModuleNames.Data))
                 AddWithWarning(new DataModule(core.MessageBus, new InMemoryDataStorage()));
+            if (!_modules.ContainsKey(ModuleNames.Security))
+                AddWithWarning(new SecurityModule(core.MessageBus));
         }
 
         public void WarnOnMissingModules(ModuleLog log)
